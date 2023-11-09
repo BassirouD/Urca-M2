@@ -1,7 +1,0 @@
-big data
-docker run -p 8888:8888 lsteffenel/hadoop-docker:amd64
-
-
-
-
-Moubass!1998
