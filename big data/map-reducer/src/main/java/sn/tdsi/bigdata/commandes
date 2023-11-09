@@ -1,0 +1,9 @@
+==> ! mkdir kMerFolder
+
+==> ! javac -classpath `hadoop-2.10.1/bin/hadoop classpath`:. -d kMerFolder devoir/java/KMerCountDriver.java
+
+==> ! jar -cvf KMER.jar -C kMerFolder/ .
+
+==> ! hadoop-2.10.1/bin/hadoop jar KMER.jar sn.tdsi.bigdata.KMerCountDriver devoir result-output
+
+==> ! hadoop-2.10.1/bin/hdfs dfs -cat result-output/part-r-00000 | sort -k2,2nr | head -n 10
