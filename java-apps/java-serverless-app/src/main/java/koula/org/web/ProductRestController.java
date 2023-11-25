@@ -3,6 +3,8 @@ package koula.org.web;
 import koula.org.entities.Customer;
 import koula.org.entities.Product;
 import koula.org.firebase.CustomerCreateResponse;
+import koula.org.firebase.CustomerDeleteResponse;
+import koula.org.firebase.CustomerListResponse;
 import koula.org.firebase.CustomerService;
 import koula.org.repositories.ProductRepository;
 import lombok.AllArgsConstructor;
@@ -29,10 +31,33 @@ public class ProductRestController {
 
     CustomerService customerService;
 
-    @PostMapping("/customer")
+    //With firebase---------------------------------------------------------------------
+
+    @PostMapping("/customers")
     public CustomerCreateResponse createCustomer(@RequestBody Customer customer) throws ExecutionException, InterruptedException {
         return customerService.createCustomer(customer);
     }
+
+    @GetMapping("/customers")
+    public CustomerListResponse getAllCustomer() throws ExecutionException, InterruptedException {
+        return customerService.getCustomerList();
+    }
+
+    @GetMapping("/customers/{key}")
+    public CustomerListResponse getAllCustomerByKey(@PathVariable String key) throws InterruptedException, ExecutionException {
+        return customerService.getCustomerListByKey(key);
+    }
+
+    @PutMapping("/customers")
+    public CustomerCreateResponse updateCustomer(@RequestBody Customer customer) throws ExecutionException, InterruptedException {
+        return customerService.updateCustomer(customer);
+    }
+
+    @DeleteMapping("/customers/{id}")
+    public CustomerDeleteResponse updateCustomer(@PathVariable String id) throws ExecutionException, InterruptedException {
+        return customerService.deleteCustomer(id);
+    }
+
 
     //https://q9fqnch84c.execute-api.us-east-1.amazonaws.com/prod/api/products
 

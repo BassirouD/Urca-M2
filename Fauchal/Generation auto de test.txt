@@ -1,0 +1,34 @@
+===============================20/11/2023=============================
+
+==> Absolument avec un model: type graphe/system d'etat transitions
+
+==>hypothèse sur les graphes:
+	*Deterministe
+	*Connexe
+	*Entrée/sortie
+
+Si on cherche la conformité entre S et I
+==>Nbr d'etat de I = Nbr d'etat de S
+
+Le but = caracteriser un etat de S
+(Equivalence de comportement =>  Bissimulation(Nihrer))
+IT: b/y; b/x; a/z; b/t; a/z; b/x
+
+_______________________________
+1er Algo de génération
+
+DS: Dintinguishing sequence
+	->Simple à trouver
+	->N'existe pas tout le temps
+
+Seq UIO
+Le but est de trouver pour chaque etat une sequence unique de E/S
+
+
+
+
+
+
+
+
+
