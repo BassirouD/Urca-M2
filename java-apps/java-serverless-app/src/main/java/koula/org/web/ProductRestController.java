@@ -62,4 +62,7 @@ public class ProductRestController {
     //https://q9fqnch84c.execute-api.us-east-1.amazonaws.com/prod/api/products
 
     //https://y22kuw2sf5.execute-api.us-east-1.amazonaws.com/prod
+
+    //New version
+    //https://icswanx57e.execute-api.us-east-1.amazonaws.com/prod/api/customers
 }

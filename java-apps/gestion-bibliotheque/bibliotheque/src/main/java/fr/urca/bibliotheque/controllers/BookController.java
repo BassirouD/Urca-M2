@@ -2,6 +2,7 @@ package fr.urca.bibliotheque.controllers;
 
 import fr.urca.bibliotheque.entities.Book;
 import fr.urca.bibliotheque.services.IBookImpl;
+import fr.urca.bibliotheque.services.iservices.IBook;
 import fr.urca.bibliotheque.utils.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +15,7 @@ import java.util.List;
 @CrossOrigin("*")
 @RequestMapping("api/v1/books")
 public class BookController {
-    private final IBookImpl iBookService;
+    private final IBook iBookService;
 
     public BookController(IBookImpl iBookService) {
         this.iBookService = iBookService;
@@ -31,7 +32,7 @@ public class BookController {
         }
     }
 
-    @GetMapping()
+   /* @GetMapping()
     ResponseEntity<?> filterByKeyWord(@RequestParam String keyWord) {
         try {
             List<Book> bookList = iBookService.filter(keyWord);
@@ -40,7 +41,7 @@ public class BookController {
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_GATEWAY).body(e.getMessage());
         }
-    }
+    }*/
 
     @PostMapping()
     ResponseEntity<?> saveBook(@RequestBody Book bookForm) {

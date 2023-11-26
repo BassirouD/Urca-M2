@@ -11,7 +11,6 @@ import java.util.List;
 
 @Service
 @Transactional
-
 public class IBookImpl implements IBook {
     private final BookRepo bookRepo;
 
