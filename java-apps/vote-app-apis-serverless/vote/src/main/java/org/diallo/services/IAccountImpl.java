@@ -1,5 +1,11 @@
 package org.diallo.services;
 
+import com.google.gson.Gson;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
 import org.diallo.entities.FirebaseUser;
 import org.diallo.entities.FirebaseUserDTO;
 import org.diallo.entities.FirebaseUserSignIn;
@@ -8,6 +14,8 @@ import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.Collections;
 
 @Service
@@ -55,10 +63,9 @@ public class IAccountImpl implements IAccount {
         );
 
         if (responseEntity.getStatusCode().is2xxSuccessful()) {
-            FirebaseUserSignIn userSignIn = responseEntity.getBody();
-            return userSignIn;
+            return responseEntity.getBody();
         } else {
-            throw new RuntimeException("error d'authentification");
+            throw new RuntimeException("error authentication");
         }
     }
 }

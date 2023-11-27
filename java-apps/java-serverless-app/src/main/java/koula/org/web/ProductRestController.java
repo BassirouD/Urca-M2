@@ -18,6 +18,7 @@ import java.util.concurrent.ExecutionException;
 @AllArgsConstructor
 public class ProductRestController {
     private ProductRepository productRepository;
+    private CustomerService customerService;
 
     @GetMapping("/products")
     public List<Product> productList() {
@@ -29,7 +30,6 @@ public class ProductRestController {
         return productRepository.findById(id).get();
     }
 
-    CustomerService customerService;
 
     //With firebase---------------------------------------------------------------------
 
