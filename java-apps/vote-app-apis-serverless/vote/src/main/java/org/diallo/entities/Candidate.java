@@ -5,9 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Data
-public class Customer {
+public class Candidate {
+    private String candidateId;
     private String name;
-    private String email;
-    private Long mobile;
-    private String id;
 }
