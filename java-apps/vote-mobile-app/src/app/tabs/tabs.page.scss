@@ -1,0 +1,25 @@
+ion-tab-bar {
+  //--border: none;
+  --background: #f8f6f6;
+  //margin: 16px 20px;
+  //border-radius: 14px;
+  //box-shadow: 0px 3px 6px rgba(0,0,0,0.04),
+  //  0px 1px 3px 0px rgba(0, 0, 0, 0.02);
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+  margin-bottom: 10px;
+  align-self: center;
+  border-radius: 20px;
+  ion-tab-button{
+    //color: aliceblue;
+    //--color-selected: rgb(9, 132, 240);
+    //--color-focused: rgb(9, 132, 240);
+  }
+}
+
+.active-item{
+  border-bottom: 5px solid var(--ion-color-primary);
+}
+
+

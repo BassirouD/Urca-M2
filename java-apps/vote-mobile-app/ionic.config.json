@@ -1,0 +1,8 @@
+{
+  "name": "vote-mobile-app",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

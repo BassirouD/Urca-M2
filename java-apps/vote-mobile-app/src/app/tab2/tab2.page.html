@@ -1,0 +1,22 @@
+<app-header [page]="page"></app-header>
+
+<ion-content [fullscreen]="false" class="ion-padding-start ion-padding-end" style="--background: #e7e7e7;">
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <app-swiper></app-swiper>
+  <h3>Résultat des votes</h3>
+  <ion-card *ngFor="let result of results_vote" style="border-radius: 10px;padding: 4%">
+    <div style="display: flex; align-items: center;justify-content: space-between">
+      <div>
+        <ion-text style="font-weight: bold;font-size: 15px">{{result.nameCandidat}}</ion-text>
+      </div>
+      <div>
+        <ion-text style="font-weight: bold;font-size: 15px">{{result.nbrVote}} votes</ion-text>
+      </div>
+      <div>
+        <ion-text style="font-weight: bold;font-size: 15px">{{result.pourcentage}}%</ion-text>
+      </div>
+    </div>
+  </ion-card>
+</ion-content>

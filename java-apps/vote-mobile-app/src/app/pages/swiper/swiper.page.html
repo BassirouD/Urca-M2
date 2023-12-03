@@ -1,0 +1,22 @@
+<swiper-container (click)="refress()" [slidesPerView]="1.5"  style="font-size: 15px;font-weight: bold;">
+  <swiper-slide>
+      <ion-card class="ion-padding">
+        <ion-text>
+          Nombre de candidat:
+        </ion-text>
+        <ion-text *ngIf="stats">
+          {{stats.nbrCandidat}}
+        </ion-text>
+      </ion-card>
+  </swiper-slide>
+  <swiper-slide>
+      <ion-card class="ion-padding">
+          <ion-text>
+            Nombre de vote:
+          </ion-text>
+          <ion-text *ngIf="stats">
+            {{stats.nbrVote}}
+          </ion-text>
+      </ion-card>
+  </swiper-slide>
+</swiper-container>

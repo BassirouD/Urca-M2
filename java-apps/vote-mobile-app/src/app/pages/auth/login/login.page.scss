@@ -1,0 +1,39 @@
+ion-content{
+  --background: url('../../../../assets/images/vote-1319435_1920.png') no-repeat center center/cover;
+  ion-grid{
+    transform: translateY(10vh);
+    ion-label, p{
+      font-size: 1.8rem;
+      font-weight: bold;
+      letter-spacing: 0.8px;
+    }
+  }
+}
+
+ion-footer{
+  ion-row{
+    background: transparent;
+    display: block;
+    ion-list{
+      border-radius: 20px 20px 0 0;
+      ion-list-header{
+        ion-label{
+          font-weight: bold;
+          font-size: 1.8em;
+        }
+      }
+    }
+    ion-item-group{
+      form{
+        .div-input {
+          border: 1.5px solid black;
+          margin-top: 5%;
+          margin-right: 5%;
+          margin-left: 5%;
+          border-radius: 7px;
+          height: 65px;
+        }
+      }
+    }
+  }
+}
