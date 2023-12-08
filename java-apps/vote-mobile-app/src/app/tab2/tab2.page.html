@@ -6,17 +6,44 @@
   </ion-refresher>
   <app-swiper></app-swiper>
   <h3>Résultat des votes</h3>
-  <ion-card *ngFor="let result of results_vote" style="border-radius: 10px;padding: 4%">
-    <div style="display: flex; align-items: center;justify-content: space-between">
-      <div>
-        <ion-text style="font-weight: bold;font-size: 15px">{{result.nameCandidat}}</ion-text>
+  <div class="tabs ion-padding">
+    <ion-segment value="volume" (ionChange)="segmentChange($event)">
+      <ion-segment-button value="volume">
+        <ion-label>Normal</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="graph">
+        <ion-label>Graphe</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <!--<div style="display: flex;justify-content: space-between;align-items: center">
+    <h3>Résultat des votes</h3>
+    <ion-button (click)="onChangeVieuw()">
+      {{btnGraphe}}
+    </ion-button>
+  </div>-->
+  <div *ngIf="activeTab==='volume'">
+    <ion-card *ngFor="let result of results_vote" style="border-radius: 10px;padding: 4%">
+      <div style="display: flex; align-items: center;justify-content: space-between">
+        <div>
+          <ion-text style="font-weight: bold;font-size: 15px">{{result.nameCandidat}}</ion-text>
+        </div>
+        <div>
+          <ion-text style="font-weight: bold;font-size: 15px">{{result.nbrVote}} votes</ion-text>
+        </div>
+        <div>
+          <ion-text style="font-weight: bold;font-size: 15px">{{result.pourcentage}}%</ion-text>
+        </div>
       </div>
-      <div>
-        <ion-text style="font-weight: bold;font-size: 15px">{{result.nbrVote}} votes</ion-text>
-      </div>
-      <div>
-        <ion-text style="font-weight: bold;font-size: 15px">{{result.pourcentage}}%</ion-text>
-      </div>
-    </div>
-  </ion-card>
+    </ion-card>
+  </div>
+  <div *ngIf="activeTab === 'graph'">
+    <ion-card>
+      <ion-card-content>
+        <div [chart]="chartOptions" style="width:80%; height:70%;margin:auto;"></div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
 </ion-content>

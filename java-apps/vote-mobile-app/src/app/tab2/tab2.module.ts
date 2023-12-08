@@ -8,6 +8,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 import { Tab2PageRoutingModule } from './tab2-routing.module';
 import {HeaderPageModule} from "../pages/header/header.module";
 import { SwiperPageModule } from '../pages/swiper/swiper.module';
+import {ChartModule} from "angular-highcharts";
 
 @NgModule({
     imports: [
@@ -17,7 +18,8 @@ import { SwiperPageModule } from '../pages/swiper/swiper.module';
         ExploreContainerComponentModule,
         Tab2PageRoutingModule,
         HeaderPageModule,
-        SwiperPageModule
+        SwiperPageModule,
+        ChartModule
     ],
   declarations: [Tab2Page]
 })

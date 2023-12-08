@@ -27,8 +27,8 @@ import java.util.Map;
 
 @Service
 public class IAccountImpl implements IAccount {
-    private static final String FIREBASE_API_URL_UP = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=";
-    private static final String FIREBASE_API_URL_IN = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=";
+    private static final String FIREBASE_API_URL_UP = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDwT-pgSCdcLRc9pRI3LuG78URsPqavvng";
+    private static final String FIREBASE_API_URL_IN = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDwT-pgSCdcLRc9pRI3LuG78URsPqavvng";
 
     Logger logger = LoggerFactory.getLogger(IAccountImpl.class);
 

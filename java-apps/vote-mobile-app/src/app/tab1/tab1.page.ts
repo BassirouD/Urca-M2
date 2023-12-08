@@ -54,7 +54,7 @@ export class Tab1Page {
     this.managerSrv.onGetVoter(vote).subscribe({
       next: vote => {
         loading.dismiss()
-        this.presentToast('Vote envoyé avec success', 'success')
+        this.presentToast('Vous avez voté avec success', 'success')
       }, error: err => {
         loading.dismiss();
         this.presentToast('Une erreur est survenue', 'danger')

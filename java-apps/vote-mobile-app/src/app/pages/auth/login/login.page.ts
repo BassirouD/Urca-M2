@@ -41,6 +41,8 @@ export class LoginPage implements OnInit {
         console.log(result)
         // @ts-ignore
         localStorage.setItem('email', result['email'])
+        // @ts-ignore
+        localStorage.setItem('token', result['idToken'])
         loading.dismiss();
         this.router.navigateByUrl('/tabs/tab1');
       }, error: err => {
