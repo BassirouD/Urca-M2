@@ -9,6 +9,8 @@ import org.diallo.entities.ResultVote;
 import org.diallo.entities.Statistique;
 import org.diallo.entities.Vote;
 import org.diallo.services.interfaces.IVoteService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -23,10 +25,17 @@ public class IVoteServiceImpl implements IVoteService {
     @Override
     public Vote voter(Vote vote) {
         Firestore firestore = FirestoreClient.getFirestore();
-        DocumentReference documentReference = firestore.collection("votes").document();
-        vote.setId(documentReference.getId());
-        documentReference.set(vote);
-        return vote;
+
+        // Vérifier si l'email a déjà voté
+        boolean b = checkUser(vote.getUserEmail());
+        if (b) {
+            throw new IllegalStateException("L'utilisateur a déjà voté.");
+        }else {
+            DocumentReference documentReference = firestore.collection("votes").document();
+            vote.setId(documentReference.getId());
+            documentReference.set(vote);
+            return vote;
+        }
     }
 
     @Override
@@ -108,7 +117,6 @@ public class IVoteServiceImpl implements IVoteService {
         Firestore db = FirestoreClient.getFirestore();
         DocumentReference candidateDoc = db.collection("candidats").document(id);
         ApiFuture<DocumentSnapshot> documentSnapshotApiFuture = candidateDoc.get();
-
         try {
             DocumentSnapshot document = documentSnapshotApiFuture.get();
             if (document.exists()) {
@@ -123,5 +131,19 @@ public class IVoteServiceImpl implements IVoteService {
         }
     }
 
-
+    public boolean checkUser(String email) {
+        Firestore db = FirestoreClient.getFirestore();
+        DocumentReference candidateDoc = db.collection("votes").document(email);
+        ApiFuture<DocumentSnapshot> documentSnapshotApiFuture = candidateDoc.get();
+        try {
+            DocumentSnapshot document = documentSnapshotApiFuture.get();
+            if (document.exists()) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }
