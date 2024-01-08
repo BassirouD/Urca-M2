@@ -6,7 +6,8 @@
     </ion-buttons>
     <ion-grid slot="end">
       <ion-col>
-        <ion-icon size="large" name="stats-chart-outline"></ion-icon>
+        <ion-icon (click)="presentConfirm()" size="large" name="log-out-outline"></ion-icon>
+        <ion-action-sheet trigger="open-action-sheet" header="Actions" [buttons]="actionSheetButtons"></ion-action-sheet>
       </ion-col>
     </ion-grid>
   </ion-toolbar>

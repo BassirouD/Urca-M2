@@ -1,13 +1,60 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>register</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">register</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-grid>
+    <ion-label color="red" class="ion-margin ion-padding-start">
+      Welcome
+      <p>
+        <ion-text class="ion-margin ion-padding-start" style="color: black;">
+          Vote App
+        </ion-text>
+      </p>
+    </ion-label>
+  </ion-grid>
 </ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-row>
+    <ion-list lines="full">
+      <ion-list-header class="ion-margin">
+        <ion-label>
+          Inscription
+        </ion-label>
+      </ion-list-header>
+      <ion-item-group class="ion-margin-horizontal ion-margin-bottom">
+        <form [formGroup]="form">
+          <div class="champ">
+            <div class="div-input">
+              <ion-item lines="none" style="--background: none">
+                <ion-label position="floating">Mobile number</ion-label>
+                <ion-input
+                  formControlName="email"
+                  type="text"
+                ></ion-input>
+              </ion-item>
+            </div>
+            <div class="div-input">
+              <ion-item lines="none" style="--background: none">
+                <ion-label position="floating">Mot de passe</ion-label>
+                <ion-input
+                  formControlName="password"
+                  [type]="type ? 'password': 'text'"></ion-input>
+              </ion-item>
+            </div>
+          </div>
+        </form>
+        <div class="ion-padding-bottom"
+             style="padding:2%;display: flex;align-items: center;justify-content: space-between">
+          <ion-button routerLink="/login" fill="clear" style="color: black;">Se connecter</ion-button>
+
+        </div>
+
+        <ion-button (click)="handlerRegister()"
+          style="--border-color: white;--background: #ebe3e3;
+                            color: white; --background-activated: white;gap: 10px;
+                            --border-width: 2px;margin-left: 5%;margin-right: 5%;color: black;font-size: medium;--border-radius: 16px"
+          expand="block" size="large">
+          Valider
+        </ion-button>
+      </ion-item-group>
+    </ion-list>
+  </ion-row>
+</ion-footer>

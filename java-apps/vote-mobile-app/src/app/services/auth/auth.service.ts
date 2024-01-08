@@ -8,6 +8,7 @@ import {environment} from "../../../environments/environment";
 export class AuthService {
 
   host = 'https://vzskf5okii.execute-api.us-east-1.amazonaws.com/prod/api/auth'
+
   //host = environment.api + '/auth'
 
   constructor(private http: HttpClient) {
@@ -17,8 +18,8 @@ export class AuthService {
     return this.http.post(this.host + '/signIn', user)
   }
 
-  register() {
-
+  register(user: any) {
+    return this.http.post(this.host + '/signup', user)
   }
 
 }

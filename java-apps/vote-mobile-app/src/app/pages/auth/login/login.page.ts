@@ -21,6 +21,7 @@ export class LoginPage implements OnInit {
   }
 
   ngOnInit() {
+    //toor98:bassirou.diallo@gmail.com
     this.form = new FormGroup({
       email: new FormControl('bassirou.diallo@gmail.com', {validators: [Validators.required]}),
       password: new FormControl('toor98', {
@@ -51,5 +52,4 @@ export class LoginPage implements OnInit {
       }
     })
   }
-
 }

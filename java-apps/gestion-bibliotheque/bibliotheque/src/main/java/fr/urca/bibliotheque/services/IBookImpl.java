@@ -12,6 +12,7 @@ import java.util.List;
 @Service
 @Transactional
 public class IBookImpl implements IBook {
+
     private final BookRepo bookRepo;
 
     public IBookImpl(BookRepo bookRepo) {
@@ -24,12 +25,12 @@ public class IBookImpl implements IBook {
     }
 
     @Override
-    public Book update(int id, Book book) {
+    public Book update(int id, Book book) throws Exception {
         if (bookRepo.existsById(id)) {
             book.setId(id);
             return bookRepo.save(book);
         } else {
-            throw new RuntimeException("Book not found with id: " + id);
+            throw new Exception("Book not found with id: " + id);
         }
     }
 

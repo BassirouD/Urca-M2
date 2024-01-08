@@ -7,7 +7,7 @@ import java.util.List;
 public interface IBook {
     Book save(Book book);
 
-    Book update(int id, Book book);
+    Book update(int id, Book book) throws Exception;
 
     Boolean delete(int id);
 
