@@ -1,0 +1,40 @@
+https://jmgarridopaz.github.io/content/articles.html
+
+Architecture JEE: Introduction au principe de l'inversion de controle et injection des dépendances
+------
+JMETER, locust|
+------
+===============Framework===================
+Backend: 2 approches
+	==>archi mono
+		inconv:
+		-Une seule techno
+		-Toute l'équipe sur la mm appli
+		-Performence(consomme beacoup de ressources)
+	==>archi micro
+
+Exigences d'un projet info
+	-Ex fonctionnelles(Besoin métiers)
+	-Ex techniques(
+		Performances(
+			Montée en charge: scalabilité Verticale et horizontale==>[thread pour chauque requete(CPU, RAM))] 
+			temps de réponse, 
+			equilibrage de charge et tolérances aux panes)
+		Maintenance(appli fermée à la modif et ouvert à l'extention)
+
+
+						     		server(Scalabité)
+Multi thread avec E/S bloquantes					//			Single thread E/S no blonquantes(NodeJS l'a créé)
+--------------------------------								-------------------------------------------------
+Pour chaque réquetes, un thread est créé
+Les techno qui l'utilise ne sont pas scalable verticalement(PHP)
+Nombre max de thread est 200(fichier de config)
+
+================Une appli facile à maintenir====================
+Une règle d'or: appli fermée à la modif et ouvert à l'extention
+
+=======================Framework pour l'IOC======================
+Permettre au dev de s'occuper uniquement du code métier et c le framework qui s'occupe du code technique. La séparation du CM et CT est rendu possible grace à la prog orientée aspect(AOP)
+
+==============================Objet java=============================
+Définit par deux chose(RAM): Etat et comportement 

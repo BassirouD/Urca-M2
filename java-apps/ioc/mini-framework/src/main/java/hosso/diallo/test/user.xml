@@ -1,0 +1,8 @@
+<beans>
+    <bean id="userService" class="hesso.diallo.test.UserService">
+        <!-- Injection via le constructeur -->
+        <constructor-arg ref="userRepository"/>
+    </bean>
+
+    <bean id="userRepository" class="hesso.diallo.test.UserRepository"/>
+</beans>

@@ -13,7 +13,7 @@ public class Order {
         this.id = id;
         this.orderItems = new ArrayList<>(Arrays.asList(new OrderItem(product)));
         this.status = OrderStatus.CREATED;
-        price = product.getPrice();
+        this.price = product.getPrice();
     }
 
     public void complete() {

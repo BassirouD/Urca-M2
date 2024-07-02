@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: demo-hexa-gradle
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mydatabase
+    username: myuser
+    password: secret
+server:
+  port: 8080

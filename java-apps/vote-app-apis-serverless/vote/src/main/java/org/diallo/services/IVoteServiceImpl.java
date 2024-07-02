@@ -25,7 +25,6 @@ public class IVoteServiceImpl implements IVoteService {
     @Override
     public Vote voter(Vote vote) {
         Firestore firestore = FirestoreClient.getFirestore();
-
         // Vérifier si l'email a déjà voté
         boolean b = checkUser(vote.getUserEmail());
         if (b) {

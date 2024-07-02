@@ -1,0 +1,7 @@
+<beans>
+    <bean id="userService" class="com.example.UserService">
+        <property name="userRepository" ref="userRepository"/>
+    </bean>
+
+    <bean id="userRepository" class="com.example.UserRepository"/>
+</beans>
